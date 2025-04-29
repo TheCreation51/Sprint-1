@@ -1,3 +1,5 @@
+# This code will define a class called drink where it will take the base, size, flavors and calculate the price of a drink. 
+
 class Drink: 
     bases = ["Water", "Sbrite", "Pokeacola", "Mr.Salt", "Hill Fog", "Leaf Wine"]
     flavors = ["Lemon", "Cherry", "Strawberry", "Mint", "Blueberry", "Lime"]
@@ -82,7 +84,8 @@ class Order:
             self._items.append(drink)
         else:
             raise TypeError("Only Drink objects can be added to the order.")
-# gathering data in order to create an order 
+        
+# gathering data from order_data in order to create the actual order 
 def create_order(order_data):
     
     order = Order()
@@ -100,10 +103,10 @@ def create_order(order_data):
 
     return {"receipt": order.get_receipt()}
 
-# testing the code by creating an order
+# testing the code by creating an order 
 order_data = [
     {"base": "Water", "size": "Mega", "flavors": ["Lemon", "Mint",]},
-    {"base": "Pokeacola", "size": "Mega", "flavors": ["Cherry"]}
+    {"base": "PokeAcola", "size": "Mega", "flavors": ["Cherry"]}
 ]
 
 result = create_order(order_data)
