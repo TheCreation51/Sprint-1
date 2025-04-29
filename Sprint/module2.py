@@ -3,7 +3,7 @@
 class Drink: 
     bases = ["Water", "Sbrite", "Pokeacola", "Mr.Salt", "Hill Fog", "Leaf Wine"]
     flavors = ["Lemon", "Cherry", "Strawberry", "Mint", "Blueberry", "Lime"]
-    sizes = {"Small": 1.50, "Medium": 2.00, "Large": 2.50, "Mega": 3.00}
+    sizes = {"Small": 1.50, "Medium": 1.75, "Large": 2.05, "Mega": 2.15}
     additional_flavor_cost = 0.15
 
     def __init__(self):
@@ -106,7 +106,7 @@ def create_order(order_data):
 # testing the code by creating an order 
 order_data = [
     {"base": "Water", "size": "Mega", "flavors": ["Lemon", "Mint",]},
-    {"base": "PokeAcola", "size": "Mega", "flavors": ["Cherry"]}
+    {"base": "Pokecola", "size": "Mega", "flavors": ["Cherry"]}
 ]
 
 result = create_order(order_data)
