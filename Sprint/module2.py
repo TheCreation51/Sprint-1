@@ -105,8 +105,9 @@ def create_order(order_data):
 
 # testing the code by creating an order 
 order_data = [
-    {"base": "Water", "size": "Mega", "flavors": ["Lemon", "Mint",]},
-    {"base": "Pokecola", "size": "Mega", "flavors": ["Cherry"]}
+    {"base": "Water", "size": "SHaha", "flavors": ["Lemon", "Mint",]},
+    {"base": "Pokeacola", "size": "Mega", "flavors": ["Cherry"]},
+    {"base": "Pokeacola", "size": "Mega", "flavors": ["Strawberry","Mint", "Lime"]},
 ]
 
 result = create_order(order_data)
