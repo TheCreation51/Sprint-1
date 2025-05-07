@@ -1,5 +1,5 @@
 import unittest
-from module2 import Drink, Order, create_order
+from menu import Drink, Order, create_order, Food
 
 class TestDrink(unittest.TestCase):
     def test_get_base(self):
@@ -95,6 +95,32 @@ class TestCreateOrder(unittest.TestCase):
         ]
         result = create_order(order_data)
         self.assertIn("error", result)
+
+class TestFood(unittest.TestCase):
+    def test_get_name(self):
+        food = Food()
+        food.set_name("Burger")
+        self.assertEqual(food.get_name(), "Burger")
+
+    def test_get_price(self):
+        food = Food()
+        food.set_price(5.99)
+        self.assertAlmostEqual(food.get_price(), 5.99)
+
+    def test_set_name_invalid(self):
+        food = Food()
+        with self.assertRaises(ValueError):
+            food.set_name("")
+
+    def test_set_price_invalid(self):
+        food = Food()
+        with self.assertRaises(ValueError):
+            food.set_price(-1)
+
+    def test_calculate_total_price(self):
+        food = Food()
+        food.set_price(5.99)
+        self.assertAlmostEqual(food.calculate_total_price(2), 11.98)
 
 if __name__ == "__main__":
     unittest.main()
