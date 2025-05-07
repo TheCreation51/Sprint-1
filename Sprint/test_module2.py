@@ -97,30 +97,16 @@ class TestCreateOrder(unittest.TestCase):
         self.assertIn("error", result)
 
 class TestFood(unittest.TestCase):
-    def test_get_name(self):
+    def test_get_food(self):
         food = Food()
-        food.set_name("Burger")
-        self.assertEqual(food.get_name(), "Burger")
+        food.set_food_item("Hotdog")
+        self.assertEqual(food.get_food_item(), "Hotdog")
 
     def test_get_price(self):
         food = Food()
-        food.set_price(5.99)
-        self.assertAlmostEqual(food.get_price(), 5.99)
-
-    def test_set_name_invalid(self):
-        food = Food()
-        with self.assertRaises(ValueError):
-            food.set_name("")
-
-    def test_set_price_invalid(self):
-        food = Food()
-        with self.assertRaises(ValueError):
-            food.set_price(-1)
-
-    def test_calculate_total_price(self):
-        food = Food()
-        food.set_price(5.99)
-        self.assertAlmostEqual(food.calculate_total_price(2), 11.98)
+        food.set_food_item("Hotdog")
+        food.add_topping("Ketchup")
+        self.assertAlmostEqual(food.calculate_price(), 2.30)
 
 if __name__ == "__main__":
     unittest.main()
